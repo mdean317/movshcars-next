@@ -28,7 +28,7 @@ export default function BankNominations({ year, category, user, lastUpdate, canU
 
             const nomToAdd = bankNominations[index]
             // Send create new review req to db, and catpure response. 
-            const response = await fetch("http://18.204.215.244:4000/usernoms/add", {
+            const response = await fetch("http://127.0.0.1:4000/usernoms/add", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -70,7 +70,8 @@ export default function BankNominations({ year, category, user, lastUpdate, canU
         const getBankNominations = async () => {
 
             // Get nominations in the selected year and category.
-            const response = await fetch(`http://18.204.215.244:4000/noms?year=${year}&category=${encodeURIComponent(category.category_id)}`);
+            const response = await fetch(`http://127.0.0.1:4000/noms?year=${year}&category=${encodeURIComponent(category.category_id)}`);
+
 
             // Parse Jason data into array of noms. 
             const nomsToShow = await response.json();

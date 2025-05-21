@@ -29,7 +29,7 @@ export default function MovieSelection({year, handleMovieSelection} : MovieSelec
     useEffect(() => {
 
         const addMorePosters = async () => {
-            const response = await fetch(`http://18.204.215.244:4000/movies/fill/${selectedYear}`)
+            const response = await fetch(`http://127.0.0.1:4000/movies/fill/${selectedYear}`)
 
                 if (!response.ok) {
                     throw new Error('Failed to fetch movies');
@@ -46,7 +46,7 @@ export default function MovieSelection({year, handleMovieSelection} : MovieSelec
                                                     }
                                                 }`;
                             // Post new bank nom to the DB 
-                            const response = await fetch(`http://18.204.215.244:4000/api/${movie.imdb_id}`, {
+                            const response = await fetch(`http://127.0.0.1:4000/api/${movie.imdb_id}`, {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ export default function MovieSelection({year, handleMovieSelection} : MovieSelec
 
             try {
 
-                const response = await fetch(`http://18.204.215.244:4000/movies/${selectedYear}`)
+                const response = await fetch(`http://127.0.0.1:4000/movies/${selectedYear}`)
                 addMorePosters()
                 
                 if (!response.ok) {
