@@ -33,7 +33,7 @@ export default function Auth({ isLoggedIn, setIsLoggedIn, user, setUser }: AuthP
         try {
 
             // Post new bank nom to the DB 
-            const response = await fetch("http://127.0.0.1:5000/auth/logout")
+            const response = await fetch("http://18.204.215.244:4000/auth/logout")
 
             if (!response.ok) {
                 console.log(response.statusText)
@@ -62,7 +62,7 @@ export default function Auth({ isLoggedIn, setIsLoggedIn, user, setUser }: AuthP
         // Error catching bliock. 
         try {
             // Post new bank nom to the DB 
-            const response = await fetch(`http://127.0.0.1:5000/auth/login`, {
+            const response = await fetch(`http://18.204.215.244:4000/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -73,6 +73,7 @@ export default function Auth({ isLoggedIn, setIsLoggedIn, user, setUser }: AuthP
                     username: newUser.username
                 })
             })
+
             console.log(response.ok)
             if (!response.ok) {
                 console.log('error?')
@@ -101,7 +102,7 @@ export default function Auth({ isLoggedIn, setIsLoggedIn, user, setUser }: AuthP
         // Error catching bliock. 
         try {
             // Post new bank nom to the DB 
-            const response = await fetch(`http://127.0.0.1:5000/auth/signup`, {
+            const response = await fetch(`http://18.204.215.244:4000/auth/signup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

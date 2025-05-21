@@ -32,7 +32,7 @@ export default function AddMovie() {
         try {
 
             // Post new bank nom to the DB 
-            const response = await fetch("http://127.0.0.1:5000/movies/add", {
+            const response = await fetch("http://18.204.215.244:4000/movies/add", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

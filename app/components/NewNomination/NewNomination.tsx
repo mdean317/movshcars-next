@@ -76,7 +76,7 @@ export default function NewNomination({year, user, allCategories, setLastUpdate,
 
             console.log(newNomination)
             // Post new bank nom to the DB 
-            const response1 = await fetch("http://127.0.0.1:5000/noms/add", {
+            const response1 = await fetch("http://18.204.215.244:4000/noms/add", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

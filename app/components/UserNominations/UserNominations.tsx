@@ -28,7 +28,7 @@ export default function UserNominations({ year, category, user, lastUpdate, setL
 
         try {
             // Delete user nomination
-            const response = await fetch((`http://127.0.0.1:5000/usernoms/delete/${encodeURIComponent(nomToDelete.user_id)}/${encodeURIComponent(nomToDelete.nomination_id)}`),
+            const response = await fetch((`http://18.204.215.244:4000/usernoms/delete/${encodeURIComponent(nomToDelete.user_id)}/${encodeURIComponent(nomToDelete.nomination_id)}`),
                 { method: 'DELETE' });
 
 
@@ -56,7 +56,7 @@ export default function UserNominations({ year, category, user, lastUpdate, setL
 
             } else {
 
-                const response = await fetch(`http://127.0.0.1:5000/usernoms?username=${encodeURIComponent(user.username.trim())}&year=${year}&category=${encodeURIComponent(category.category_id)}`);
+                const response = await fetch(`http://18.204.215.244:4000/usernoms?username=${encodeURIComponent(user.username.trim())}&year=${year}&category=${encodeURIComponent(category.category_id)}`);
                 const userNomsToShow = await response.json();
                 setuserNominations(userNomsToShow)
                 if (userNomsToShow.length > 4) {
